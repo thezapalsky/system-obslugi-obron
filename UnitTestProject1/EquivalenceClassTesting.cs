@@ -19,8 +19,7 @@ namespace UnitTestProject1
 
         [TestMethod]
         [DataRow("Analiza transportu publicznego w okresie świątecznym bla bla...")]
-        [DataRow(" ")]
-        [DataRow(42)] //int ma nie przechodzic i tak jest
+        [DataRow("żążśźćęńł!@#@!$%^&*()_+")]
         public void TestTopic(string topic)
         {
             {
@@ -50,15 +49,18 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        [DataRow("")]
+        [DataRow(" ")]
+        [DataRow(42)]
         [ExpectedException(typeof(ArgumentException))]
-        public void TestTopicEmptyStringException()
+        public void TestTopicEmptyStringException(string s)
         {
             {
                 Student s1 = new Student("Adam", "Małysz", "amalysz@gmail.com", "654321", "amalysz@student.agh.edu.pl", "hash123");
                 Professor p1 = new Professor("Ambroży", "Kleks", "akleks@gmail.com", "123456", "akleks@agh.edu.pl", "hash123");
 
 
-                ThesisProposal p = s1.MakeThesisProposal(0, p1, "");
+                ThesisProposal p = s1.MakeThesisProposal(0, p1, s);
 
             }
 
