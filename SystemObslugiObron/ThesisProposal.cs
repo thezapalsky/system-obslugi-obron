@@ -22,8 +22,8 @@ namespace SystemObslugiObron
         string _topic;
         Student _student;
 
-        internal Depertment Department { get => _department; set => _department = value; }
-        internal Professor Promotor { get => _promoter; set => _promoter = value; }
+        public Depertment Department { get => _department; set => _department = value; }
+        public Professor Promotor { get => _promoter; set => _promoter = value; }
         public string Topic { get => _topic; set => _topic = value; }
 
         public ThesisProposal(Depertment department, Professor promoter, string topic, Student student)
@@ -32,6 +32,9 @@ namespace SystemObslugiObron
             _promoter = promoter;
             _topic = topic;
             _student = student;
+
+            if (topic == null) { throw new ArgumentNullException("null"); }
+            else if (topic.Trim() == "") { throw new ArgumentException("empty string"); }
 
             //nie wiem do konca czy do jest dobre wykorzystanie tego wzorca
             this.Attach(promoter);

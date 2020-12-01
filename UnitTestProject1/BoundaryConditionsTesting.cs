@@ -8,6 +8,7 @@ using SystemObslugiObron;
 
 namespace UnitTestProject1
 {
+    [TestClass]
     public class BoundaryConditionsTesting
     {
         [TestMethod]
