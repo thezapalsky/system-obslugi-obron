@@ -21,6 +21,10 @@ namespace SystemObslugiObron
         string phone_number;
         //tba jakies inty by sie przydaly, gettery i settery
 
+        public void SetBirthDate(int day, int month, int year)
+        {
+            this.Birthdate = new DateTime(year, month, day);
+        }
 
         public User(string name, string surname, string email_external, string id, string email_university, string password)
         {
@@ -38,5 +42,6 @@ namespace SystemObslugiObron
         public string Id { get => _id; set => _id = value; }
         public string Email_university { get => _email_university; set => _email_university = value; }
         public string Password {  set => _password = value; }
+        public DateTime Birthdate { get => birthdate; set => birthdate = value; }
     }
 }
