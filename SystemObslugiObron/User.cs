@@ -36,6 +36,7 @@ namespace SystemObslugiObron
             _password = password;
         }
 
+
         public string Name { get => _name; set => _name = value; }
         public string Surname { get => _surname; set => _surname = value; }
         public string Email_external { get => _email_external; set => _email_external = value; }
