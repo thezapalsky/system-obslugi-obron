@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IObserver.cs" />
+    <Compile Include="IValidator.cs" />
     <Compile Include="Professor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="ThesisProposal.cs" />
+    <Compile Include="TopicValidator.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

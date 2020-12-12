@@ -13,7 +13,7 @@ namespace SystemObslugiObron
         {
             string pass = "losowogenerowanehasloktorepowinnobychashem";
             string id_number = "123456"; //numer indeksu polaczony z kontem w domenie @agh.edu.pl (np. pobierany z bazy)
-            string external_mail = "amalysz@gmail.com"; //nwm w sumie czemu tego nie ma w makiecie w rejestracji 
+            string external_mail = "amalysz@gmail.com"; //nwm w sumie czemu tego nie ma w makiecie w rejestracji //update: jest w makiecie
 
             if (isProfessor)
             {

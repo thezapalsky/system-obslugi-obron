@@ -21,10 +21,16 @@ namespace SystemObslugiObron
         Professor _promoter;
         string _topic;
         Student _student;
+        private IValidator _validator;
 
         public Depertment Department { get => _department; set => _department = value; }
         public Professor Promotor { get => _promoter; set => _promoter = value; }
         public string Topic { get => _topic; set => _topic = value; }
+
+        public ThesisProposal(IValidator validator)
+        {
+            this._validator = validator;
+        }
 
         public ThesisProposal(Depertment department, Professor promoter, string topic, Student student)
         {
@@ -35,6 +41,7 @@ namespace SystemObslugiObron
 
             if (topic == null) { throw new ArgumentNullException("null"); }
             else if (topic.Trim() == "") { throw new ArgumentException("empty string"); }
+            else if(!IsTopicCorrect(topic)) { throw new ArgumentException("word from stoplist"); }
 
             //nie wiem do konca czy do jest dobre wykorzystanie tego wzorca
             this.Attach(promoter);
@@ -48,6 +55,21 @@ namespace SystemObslugiObron
                 observer.Update(this);
                 //observer.Update(this._director, this._title, this._status);
             }
+        }
+
+        public bool IsTopicCorrect(string topic)
+        {
+            IValidator validator = new TopicValidator();
+
+            //bool isCorrect = validator.IsTopicCorrect(topic);
+
+            //do mocka
+            bool isCorrect = this._validator.IsTopicCorrect(topic);
+
+            if (isCorrect == false)
+                return false;
+            else
+                return true;
         }
     }
 }
