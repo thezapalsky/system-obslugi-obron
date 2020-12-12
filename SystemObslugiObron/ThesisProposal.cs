@@ -61,10 +61,10 @@ namespace SystemObslugiObron
         {
             IValidator validator = new TopicValidator();
 
-            //bool isCorrect = validator.IsTopicCorrect(topic);
+            bool isCorrect = validator.IsTopicCorrect(topic);
 
             //do mocka
-            bool isCorrect = this._validator.IsTopicCorrect(topic);
+            //bool isCorrect = this._validator.IsTopicCorrect(topic);
 
             if (isCorrect == false)
                 return false;
